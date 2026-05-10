@@ -1,0 +1,442 @@
+/* ─────────────────────────────────────────────────────────
+   Click& — style.css
+   ───────────────────────────────────────────────────────── */
+
+   *,
+   *::before,
+   *::after {
+       box-sizing: border-box;
+       margin: 0;
+       padding: 0;
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   
+   :root {
+   
+       --bg:          #080e1c;
+       --surface:     #0f172a;
+       --border:      #1e2d45;
+   
+       --accent:      #f97316;
+       --accent-dim:  rgba(249, 115, 22, 0.10);
+   
+       --text:        #e2e8f0;
+       --muted:       #475569;
+       --comment:     #64748b;
+   
+       --font-display:'Chakra Petch', monospace;
+       --font-mono:   'JetBrains Mono', monospace;
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   
+   body {
+       background: #ffffff;
+       color: var(--text);
+       font-family: var(--font-display);
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   /* HERO */
+   /* ───────────────────────────────────────────────────────── */
+   
+   .hero {
+   
+       padding: 50px 20px;
+   
+       display: flex;
+       align-items: center;
+       justify-content: center;
+   
+       background-color: var(--surface);
+   
+       background-image:
+           radial-gradient(circle, rgba(249,115,22,0.05) 0%, transparent 65%),
+           radial-gradient(circle, rgba(255,255,255,0.018) 1px, transparent 1px);
+   
+       background-size:
+           100% 100%,
+           30px 30px;
+   
+       background-position:
+           center center,
+           0 0;
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   
+   .hero-inner {
+       text-align: center;
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   /* FRAME */
+   /* ───────────────────────────────────────────────────────── */
+   
+   .frame {
+       position: relative;
+       display: inline-block;
+       padding: 42px 60px;
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   
+   .corner {
+   
+       position: absolute;
+   
+       width: 14px;
+       height: 14px;
+   
+       border-color: var(--accent);
+       border-style: solid;
+   
+       opacity: 0.75;
+   }
+   
+   .corner-tl {
+       top: 0;
+       left: 0;
+       border-width: 2px 0 0 2px;
+   }
+   
+   .corner-tr {
+       top: 0;
+       right: 0;
+       border-width: 2px 2px 0 0;
+   }
+   
+   .corner-bl {
+       bottom: 0;
+       left: 0;
+       border-width: 0 0 2px 2px;
+   }
+   
+   .corner-br {
+       bottom: 0;
+       right: 0;
+       border-width: 0 2px 2px 0;
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   /* LOGO */
+   /* ───────────────────────────────────────────────────────── */
+   
+   .logo-line {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       gap: 12px;
+       line-height: 1;
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   
+   .lightning {
+   
+       font-size: 60px;
+   
+       filter:
+           drop-shadow(0 0 8px rgba(249, 115, 22, 0.30));
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   
+   h1 {
+   
+       font-size: 80px;
+   
+       font-weight: 700;
+   
+       letter-spacing: -3px;
+   
+       line-height: 1;
+   
+       color: var(--text);
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   /* TEXT */
+   /* ───────────────────────────────────────────────────────── */
+   
+   .sub {
+   
+       margin-top: 20px;
+   
+       font-size: 11px;
+   
+       font-weight: 300;
+   
+       letter-spacing: 5px;
+   
+       color: var(--muted);
+   
+       font-family: var(--font-mono);
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   
+   .tagline {
+   
+       margin-top: 10px;
+   
+       font-family: var(--font-mono);
+   
+       font-size: 12px;
+   
+       color: #94a3b8;
+   
+       opacity: 0.75;
+   
+       font-style: italic;
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   /* TOOLS */
+   /* ───────────────────────────────────────────────────────── */
+   
+   .tools {
+   
+       background: #ffffff;
+   
+       padding: 80px 60px 100px;
+   
+       max-width: 1100px;
+   
+       margin: 0 auto;
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   
+   .tools-grid {
+   
+       display: grid;
+   
+       grid-template-columns:
+           repeat(auto-fit, minmax(280px, 1fr));
+   
+       gap: 18px;
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   
+   .tool-card {
+   
+       position: relative;
+   
+       display: block;
+   
+       text-decoration: none;
+   
+       background: #f8fafc;
+   
+       border: 1px solid #e2e8f0;
+   
+       padding: 32px 28px 48px;
+   
+       transition:
+           border-color 0.2s ease,
+           background 0.2s ease,
+           transform 0.2s ease;
+   
+       cursor: pointer;
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   
+   .tool-card:hover {
+   
+       border-color: var(--accent);
+   
+       background: #fff7f0;
+   
+       transform: translateY(-2px);
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   
+   .card-header {
+   
+       display: flex;
+   
+       justify-content: space-between;
+   
+       align-items: flex-start;
+   
+       margin-bottom: 14px;
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   
+   .card-header .tag {
+       margin-bottom: 0;
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   
+   .tool-icon {
+   
+       width: 40px;
+       height: 40px;
+   
+       object-fit: contain;
+   
+       border-radius: 8px;
+   
+       opacity: 0.9;
+   
+       transition: opacity 0.2s ease;
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   
+   .tool-icon--mono {
+   
+       border-radius: 0;
+   
+       opacity: 0.65;
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   
+   .tool-card:hover .tool-icon--mono {
+       opacity: 0.9;
+   }
+   
+   .tool-card:hover .tool-icon {
+       opacity: 1;
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   
+   .tool-card .tag {
+   
+       font-family: var(--font-mono);
+   
+       font-size: 11px;
+   
+       color: var(--accent);
+   
+       letter-spacing: 1px;
+   
+       opacity: 0.75;
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   
+   .tool-card h3 {
+   
+       font-size: 19px;
+   
+       font-weight: 600;
+   
+       color: #0f172a;
+   
+       margin-bottom: 10px;
+   
+       letter-spacing: -0.3px;
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   
+   .tool-card p {
+   
+       font-size: 13px;
+   
+       color: #64748b;
+   
+       line-height: 1.65;
+   
+       font-weight: 300;
+   
+       font-family: var(--font-mono);
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   
+   .arrow {
+   
+       position: absolute;
+   
+       bottom: 24px;
+       right: 26px;
+   
+       color: var(--accent);
+   
+       font-size: 18px;
+   
+       opacity: 0;
+   
+       transition:
+           opacity 0.2s ease,
+           transform 0.2s ease;
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   
+   .tool-card:hover .arrow {
+   
+       opacity: 1;
+   
+       transform: translateX(5px);
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   /* FOOTER */
+   /* ───────────────────────────────────────────────────────── */
+   
+   footer {
+   
+       border-top: 1px solid #e2e8f0;
+   
+       background: #ffffff;
+   
+       padding: 24px 60px;
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   
+   .footer-logo {
+   
+       font-size: 15px;
+   
+       font-weight: 600;
+   
+       color: #94a3b8;
+   
+       letter-spacing: -0.5px;
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   
+   .footer-bolt {
+       font-size: 14px;
+   }
+   
+   /* ───────────────────────────────────────────────────────── */
+   /* RESPONSIVE */
+   /* ───────────────────────────────────────────────────────── */
+   
+   @media (max-width: 600px) {
+   
+       h1 {
+           font-size: 52px;
+       }
+   
+       .lightning {
+           font-size: 42px;
+       }
+   
+       .frame {
+           padding: 32px 28px;
+       }
+   
+       .tools {
+           padding: 60px 24px 80px;
+       }
+   
+       footer {
+           padding: 20px 24px;
+       }
+   }
