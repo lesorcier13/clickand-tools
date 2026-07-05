@@ -383,6 +383,42 @@
    }
    
    /* ───────────────────────────────────────────────────────── */
+   /* PENDING CARDS */
+   /* ───────────────────────────────────────────────────────── */
+
+   .tool-card--pending {
+       opacity: 0.5;
+       cursor: default;
+   }
+
+   .tool-card--pending:hover {
+       border-color: #e2e8f0;
+       background: #f8fafc;
+       transform: none;
+   }
+
+   .tool-card--pending:hover .arrow {
+       opacity: 0;
+   }
+
+   .tool-icon-placeholder {
+       font-size: 28px;
+       opacity: 0.25;
+       line-height: 1;
+   }
+
+   .status-badge {
+       position: absolute;
+       bottom: 24px;
+       left: 28px;
+       font-family: var(--font-mono);
+       font-size: 11px;
+       color: var(--accent);
+       opacity: 0.6;
+       letter-spacing: 0.5px;
+   }
+
+   /* ───────────────────────────────────────────────────────── */
    /* FOOTER */
    /* ───────────────────────────────────────────────────────── */
    
